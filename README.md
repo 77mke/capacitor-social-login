@@ -390,11 +390,12 @@ Refresh the access token
 
 #### AppleProviderResponse
 
-| Prop              | Type                                                                                                         |
-| ----------------- | ------------------------------------------------------------------------------------------------------------ |
-| **`accessToken`** | <code><a href="#accesstoken">AccessToken</a> \| null</code>                                                  |
-| **`idToken`**     | <code>string \| null</code>                                                                                  |
-| **`profile`**     | <code>{ user: string; email: string \| null; givenName: string \| null; familyName: string \| null; }</code> |
+| Prop                    | Type                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **`accessToken`**       | <code><a href="#accesstoken">AccessToken</a> \| null</code>                                                  |
+| **`idToken`**           | <code>string \| null</code>                                                                                  |
+| **`authorizationCode`** | <code>string \| null</code>                                                                                  |
+| **`profile`**           | <code>{ user: string; email: string \| null; givenName: string \| null; familyName: string \| null; }</code> |
 
 
 #### LoginOptions

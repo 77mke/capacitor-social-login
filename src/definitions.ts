@@ -123,6 +123,7 @@ export interface AppleProviderOptions {
 export interface AppleProviderResponse {
   accessToken: AccessToken | null;
   idToken: string | null;
+  authorizationCode: string | null;
   profile: {
     user: string;
     email: string | null;
@@ -136,7 +137,7 @@ export interface LoginOptions {
    * Provider
    * @description select provider to login with
    */
-  provider: "facebook" | "google" | "apple" | "twitter";
+  provider: 'facebook' | 'google' | 'apple' | 'twitter';
   /**
    * Options
    * @description payload to login with
@@ -149,7 +150,7 @@ export interface LoginResult {
    * Provider
    * @description select provider to login with
    */
-  provider: "facebook" | "google" | "apple" | "twitter";
+  provider: 'facebook' | 'google' | 'apple' | 'twitter';
   /**
    * Payload
    * @description payload to login with
@@ -200,7 +201,7 @@ export interface AuthorizationCodeOptions {
    * Provider
    * @description Provider for the authorization code
    */
-  provider: "apple" | "google" | "facebook";
+  provider: 'apple' | 'google' | 'facebook';
 }
 
 export interface isLoggedInOptions {
@@ -208,7 +209,7 @@ export interface isLoggedInOptions {
    * Provider
    * @description Provider for the isLoggedIn
    */
-  provider: "apple" | "google" | "facebook";
+  provider: 'apple' | 'google' | 'facebook';
 }
 
 export interface SocialLoginPlugin {
@@ -226,7 +227,7 @@ export interface SocialLoginPlugin {
    * Logout
    * @description logout the user
    */
-  logout(options: { provider: "apple" | "google" | "facebook" }): Promise<void>;
+  logout(options: { provider: 'apple' | 'google' | 'facebook' }): Promise<void>;
   /**
    * IsLoggedIn
    * @description logout the user
@@ -237,9 +238,7 @@ export interface SocialLoginPlugin {
    * Get the current access token
    * @description get the current access token
    */
-  getAuthorizationCode(
-    options: AuthorizationCodeOptions,
-  ): Promise<AuthorizationCode>;
+  getAuthorizationCode(options: AuthorizationCodeOptions): Promise<AuthorizationCode>;
   /**
    * Refresh the access token
    * @description refresh the access token
